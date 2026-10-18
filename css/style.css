@@ -431,13 +431,29 @@ section{position:relative}
 .fab svg{width:21px; height:21px; flex:none}
 .fab:hover{background:var(--navy-light); transform:translateY(-2px)}
 
+/* ============ HERO OCHILISH ANIMATSIYASI ============ */
+/* Sahifa ochilganda hero elementlari navbatma-navbat yumshoq ko‘tariladi.
+   Kechikish har bir elementda --d o‘zgaruvchisi orqali beriladi. */
+@keyframes rise{
+  from{opacity:0; transform:translateY(14px)}
+  to{opacity:1; transform:none}
+}
+.rise{
+  animation:rise .5s cubic-bezier(.22,.61,.36,1) backwards;
+  animation-delay:var(--d, 0s);
+}
+/* Xavfsizlik to‘ri: agar animatsiya biror sababga ko‘ra ishga tushmasa
+   (brauzer kadr chizmayotgan bo‘lsa), js/main.js shu klassni qo‘shadi va
+   hero baribir ko‘rinadi. Animatsiya normal tugagan bo‘lsa, ta’siri yo‘q. */
+.rise.is-done{animation:none}
+
 /* ============ KO‘RINISH ANIMATSIYASI ============ */
 .reveal{opacity:0; transform:translateY(18px); transition:opacity .55s ease, transform .55s ease}
 .reveal.is-in{opacity:1; transform:none}
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   .reveal{opacity:1; transform:none; transition:none}
-  *{animation-duration:.01ms !important; transition-duration:.01ms !important}
+  *{animation-duration:.01ms !important; animation-delay:0s !important; transition-duration:.01ms !important}
 }
 
 /* ============ MOSLASHUVCHANLIK ============ */

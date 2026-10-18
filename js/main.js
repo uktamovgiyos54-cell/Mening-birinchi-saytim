@@ -107,6 +107,17 @@
     if(img.complete) shown();
   });
 
+  /* ---------- Hero animatsiyasi: xavfsizlik to‘ri ----------
+     Hero elementlari animatsiya boshlanguncha ko‘rinmas turadi
+     (CSS: animation-fill-mode backwards). Agar brauzer biror sababga
+     ko‘ra animatsiyani ishga tushirmasa, ular ko‘rinmay qolardi.
+     Ketma-ketlik 0.83s da tugaydi — 1.1s dan keyin majburan ochamiz. */
+  window.setTimeout(function(){
+    Array.prototype.forEach.call(document.querySelectorAll('.rise'), function(el){
+      el.classList.add('is-done');
+    });
+  }, 1100);
+
   /* ---------- Yengil ko‘rinish animatsiyasi ---------- */
   var reveals = document.querySelectorAll('.reveal');
   if('IntersectionObserver' in window){
