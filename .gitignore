@@ -1,0 +1,40 @@
+# ===== Maxfiy ma'lumotlar =====
+# Parol, API kalit va shunga o'xshash narsalar hech qachon GitHub'ga ketmasin
+.env
+.env.*
+*.key
+*.pem
+secrets.*
+
+# ===== Windows tizim fayllari =====
+Thumbs.db
+ehthumbs.db
+desktop.ini
+$RECYCLE.BIN/
+
+# ===== macOS / Linux tizim fayllari =====
+.DS_Store
+.AppleDouble
+*~
+
+# ===== Muharrir sozlamalari =====
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ===== Claude Code lokal sozlamalari =====
+.claude/settings.local.json
+
+# ===== Office vaqtinchalik fayllari =====
+# Word/PowerPoint ochiq turganda yaratadigan ~$ bilan boshlanuvchi fayllar
+~$*
+
+# ===== Loglar va vaqtinchalik fayllar =====
+*.log
+*.tmp
+*.bak
+
+# ===== Agar keyinchalik vosita qo'shilsa =====
+node_modules/
+__pycache__/
