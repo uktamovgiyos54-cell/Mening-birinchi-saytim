@@ -118,6 +118,19 @@
     });
   }, 1100);
 
+  /* ---------- Suzuvchi Telegram tugmasi ----------
+     "Aloqa" bo‘limi ekranga kelganda tugma yashiriladi: u yerda katta
+     Telegram tugmasi bor, suzuvchi tugma esa kontentni to‘sib turadi. */
+  var fab = document.querySelector('.fab');
+  var aloqa = document.getElementById('aloqa');
+  if(fab && aloqa && 'IntersectionObserver' in window){
+    new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        fab.classList.toggle('is-hidden', en.isIntersecting);
+      });
+    }, {threshold:0.12}).observe(aloqa);
+  }
+
   /* ---------- Yengil ko‘rinish animatsiyasi ---------- */
   var reveals = document.querySelectorAll('.reveal');
   if('IntersectionObserver' in window){

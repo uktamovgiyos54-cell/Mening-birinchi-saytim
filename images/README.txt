@@ -21,3 +21,9 @@ naqshli bo'sh o'rin ko'rinadi - sayt baribir chiroyli qoladi.
 
 Fayl nomini o'zgartirmoqchi bo'lsangiz, index.html dagi
 <img src="images/..."> qatorlarini ham yangilang.
+
+-----------------------------------------------------
+DIQQAT: og-image.png faylini o'chirmang!
+Bu - sayt havolasi Telegram yoki ijtimoiy tarmoqqa
+tashlanganda chiqadigan karta rasmi (1200x630).
+U index.html dagi og:image tegiga bog'langan.
