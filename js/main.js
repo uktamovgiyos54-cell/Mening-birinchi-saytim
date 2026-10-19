@@ -5,6 +5,71 @@
 (function(){
   "use strict";
 
+  /* ---------- Jurnallar va konferensiyalar ----------
+     Ma’lumot js/data.js da (window.JOURNALS, window.CONFERENCES).
+     Har bir element — Telegram postiga olib boruvchi karta. */
+  var SVG_NS = 'http://www.w3.org/2000/svg';
+
+  function icon(id){
+    var svg = document.createElementNS(SVG_NS, 'svg');
+    svg.setAttribute('aria-hidden', 'true');
+    var use = document.createElementNS(SVG_NS, 'use');
+    use.setAttribute('href', '#' + id);
+    svg.appendChild(use);
+    return svg;
+  }
+
+  function el(tag, cls, text){
+    var node = document.createElement(tag);
+    if(cls) node.className = cls;
+    if(text) node.textContent = text;
+    return node;
+  }
+
+  function renderList(boxId, data){
+    var box = document.getElementById(boxId);
+    if(!box || !Array.isArray(data) || !data.length) return;
+    var unit = box.getAttribute('data-unit') || '';
+    var frag = document.createDocumentFragment();
+
+    data.forEach(function(it){
+      if(!it || !it.title || !it.url) return;
+      var items = Array.isArray(it.items) ? it.items : [];
+
+      var a = el('a', 'lcard');
+      a.href = it.url;
+      a.target = '_blank';
+      a.rel = 'noopener noreferrer';
+
+      var head = el('div', 'lcard__head');
+      head.appendChild(el('span', 'lcard__count', items.length ? items.length + ' ta ' + unit : 'Telegram'));
+      var ico = el('span', 'lcard__ico');
+      ico.appendChild(icon('i-tg'));
+      head.appendChild(ico);
+      a.appendChild(head);
+
+      a.appendChild(el('h3', '', it.title));
+      if(it.description) a.appendChild(el('p', 'lcard__desc', it.description));
+
+      if(items.length){
+        var ul = el('ul', 'lcard__list');
+        items.forEach(function(name){ ul.appendChild(el('li', '', name)); });
+        a.appendChild(ul);
+      }
+
+      var more = el('span', 'lcard__more', 'Telegram’da batafsil');
+      more.appendChild(icon('i-arrow'));
+      a.appendChild(more);
+
+      frag.appendChild(a);
+    });
+
+    box.appendChild(frag);
+  }
+
+  renderList('journalList', window.JOURNALS);
+  renderList('conferenceList', window.CONFERENCES);
+
   /* ---------- Mobil menyu ---------- */
   var burger = document.getElementById('burger');
   var mnav   = document.getElementById('mobileNav');
@@ -36,8 +101,10 @@
     }
   });
 
+  /* css/style.css dagi mobil menyu chegarasi bilan bir xil */
+  var NAV_BREAKPOINT = 1160;
   window.addEventListener('resize', function(){
-    if(window.innerWidth > 900 && burger.getAttribute('aria-expanded') === 'true') setMenu(false);
+    if(window.innerWidth > NAV_BREAKPOINT && burger.getAttribute('aria-expanded') === 'true') setMenu(false);
   });
 
   /* ---------- Sticky header soyasi ---------- */

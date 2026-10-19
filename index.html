@@ -76,6 +76,8 @@
 
     <nav class="nav" id="desktopNav" aria-label="Asosiy navigatsiya">
       <a href="#talabalar">Xizmatlar</a>
+      <a href="#jurnallar">Jurnallar</a>
+      <a href="#konferensiyalar">Konferensiyalar</a>
       <a href="#loyihalar">Loyihalarim</a>
       <a href="#nega-men">Nega men?</a>
       <a href="#jarayon">Jarayon</a>
@@ -84,8 +86,8 @@
     </nav>
 
     <div class="header__cta">
-      <a class="btn btn--ghost" href="tel:+998948830140">
-        <svg aria-hidden="true"><use href="#i-phone"/></svg> +998 94 883 01 40
+      <a class="btn btn--ghost btn--icon" href="tel:+998948830140" aria-label="Qo‘ng‘iroq qilish: +998 94 883 01 40" title="+998 94 883 01 40">
+        <svg aria-hidden="true"><use href="#i-phone"/></svg>
       </a>
       <a class="btn btn--primary" href="https://t.me/kx_manager" target="_blank" rel="noopener">
         <svg aria-hidden="true"><use href="#i-tg"/></svg> Telegram
@@ -108,6 +110,8 @@
     <a href="#magistrantlar">Magistrantlar va doktorantlar</a>
     <a href="#nashr">Ilmiy nashr xizmatlari</a>
   </div>
+  <a class="mnav__link" href="#jurnallar">Jurnallar <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+  <a class="mnav__link" href="#konferensiyalar">Konferensiyalar <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
   <a class="mnav__link" href="#loyihalar">Loyihalarim <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
   <a class="mnav__link" href="#nega-men">Nega men? <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
   <a class="mnav__link" href="#jarayon">Ishlash jarayoni <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
@@ -330,6 +334,52 @@
           <p>Topshirishdan oldin matn, havolalar va rasmiy talablarni yana bir bor nazoratdan o‘tkazish.</p>
         </article>
       </div>
+    </div>
+  </section>
+
+  <!-- ===== JURNALLAR =====
+       Kartalar js/data.js dagi JOURNALS massividan chiziladi. -->
+  <section class="section" id="jurnallar">
+    <div class="wrap">
+      <div class="section-head section-head--center reveal">
+        <span class="eyebrow">Jurnallar</span>
+        <h2>Maqola uchun ilmiy jurnallar</h2>
+        <p>Yo‘nalishingizga mos jurnallar to‘plamlari. Kartani bosing — Telegram kanaldagi postda talablar, narx va muddatlar bilan tanishasiz.</p>
+      </div>
+
+      <div class="lgrid reveal" id="journalList" data-unit="jurnal">
+        <noscript>
+          <p class="pnote">Ro‘yxatni ko‘rish uchun <a href="https://t.me/Konferensiyalar_jurnallar" target="_blank" rel="noopener noreferrer"><strong>Telegram kanalga o‘ting</strong></a>.</p>
+        </noscript>
+      </div>
+
+      <p class="pnote reveal">
+        <svg aria-hidden="true"><use href="#i-shield"/></svg>
+        Maqolani qabul qilish to‘g‘risidagi qaror jurnal tahririyatiga tegishli — men talablarga moslash va topshirishda yordam beraman.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== KONFERENSIYALAR =====
+       Kartalar js/data.js dagi CONFERENCES massividan chiziladi. -->
+  <section class="section section--alt" id="konferensiyalar">
+    <div class="wrap">
+      <div class="section-head section-head--center reveal">
+        <span class="eyebrow">Konferensiyalar</span>
+        <h2>Tezis uchun konferensiyalar</h2>
+        <p>Mahalliy va xalqaro konferensiyalar to‘plamlari. Kartani bosing — Telegram kanaldagi postda batafsil ma’lumot berilgan.</p>
+      </div>
+
+      <div class="lgrid reveal" id="conferenceList" data-unit="konferensiya">
+        <noscript>
+          <p class="pnote">Ro‘yxatni ko‘rish uchun <a href="https://t.me/Konferensiyalar_jurnallar" target="_blank" rel="noopener noreferrer"><strong>Telegram kanalga o‘ting</strong></a>.</p>
+        </noscript>
+      </div>
+
+      <p class="pnote reveal">
+        <svg aria-hidden="true"><use href="#i-shield"/></svg>
+        Tezisni qabul qilish to‘g‘risidagi qaror konferensiya tashkilotchilariga tegishli.
+      </p>
     </div>
   </section>
 
@@ -622,6 +672,8 @@
         <a href="#talabalar">Talabalar uchun</a>
         <a href="#magistrantlar">Magistrantlar</a>
         <a href="#nashr">Ilmiy nashr</a>
+        <a href="#jurnallar">Jurnallar</a>
+        <a href="#konferensiyalar">Konferensiyalar</a>
         <a href="#loyihalar">Loyihalarim</a>
         <a href="#nega-men">Nega men?</a>
         <a href="#jarayon">Jarayon</a>
@@ -654,6 +706,7 @@
 }
 </script>
 
+<script src="js/data.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>

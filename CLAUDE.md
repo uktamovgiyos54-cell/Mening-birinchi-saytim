@@ -20,16 +20,27 @@ orqali murojaat qilishga undash.
 
 ## Fayl tuzilmasi
 ```
-index.html        — sahifa tuzilmasi (HTML)
-css/style.css     — barcha uslublar
-js/main.js        — barcha skript
-images/           — “Loyihalarim” kartochkalari rasmlari (loyiha-1..6.jpg)
+index.html            — sahifa tuzilmasi (HTML)
+css/style.css         — barcha uslublar
+js/data.js            — jurnallar va konferensiyalar ro‘yxati (ma’lumot)
+js/main.js            — barcha skript
+images/               — loyiha-1..6.png (kartochkalar), og-image.png (havola kartasi)
+favicon.svg, favicon-32.png, apple-touch-icon.png — ikonalar
 ```
-Yangi fayl qo‘shma — shu to‘rttasi yetarli.
+Shu ro‘yxatdan tashqari yangi fayl qo‘shma.
 
 ## Sahifa bo‘limlari (tartib bilan)
-`#hero` → `#talabalar` → `#magistrantlar` → `#nashr` → `#loyihalar`
-→ `#nega-men` → `#jarayon` → `#faq` → `#aloqa`
+`#hero` → `#talabalar` → `#magistrantlar` → `#nashr` → `#jurnallar`
+→ `#konferensiyalar` → `#loyihalar` → `#nega-men` → `#jarayon` → `#faq` → `#aloqa`
+
+- `#jurnallar` va `#konferensiyalar` kartalari `js/data.js` dagi
+  `JOURNALS` / `CONFERENCES` massividan `js/main.js` orqali chiziladi.
+  Har bir karta = bitta Telegram post: `{ title, description, items, url }`.
+  Yangi karta qo‘shish uchun faqat `js/data.js` ga obyekt qo‘shiladi.
+- `js/data.js` ga narx, foiz yoki nashr kafolatini yozma — ular
+  Telegram postida qoladi.
+- Menyuda 8 ta havola bor; 1160px dan tor ekranda mobil menyu chiqadi.
+  Bu qiymat `css/style.css` va `js/main.js` (`NAV_BREAKPOINT`) da bir xil.
 
 - Uchta xizmat bo‘limi alohida `section`, har birida `.svc-hero`
   (nishon + “Yo‘nalish NN” + sarlavha + tavsif + Telegram tugmasi).
