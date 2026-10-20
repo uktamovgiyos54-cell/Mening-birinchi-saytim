@@ -26,6 +26,7 @@ js/data.js            — jurnallar va konferensiyalar ro‘yxati (ma’lumot)
 js/main.js            — barcha skript
 images/               — loyiha-1..6.png (kartochkalar), og-image.png (havola kartasi)
 favicon.svg, favicon-32.png, apple-touch-icon.png — ikonalar
+.github/workflows/deploy.yml — main ga push bo‘lganda serverga avtodeploy
 ```
 Shu ro‘yxatdan tashqari yangi fayl qo‘shma.
 
